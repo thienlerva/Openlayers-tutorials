@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Openlayers Web Map</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./libs/v6.2.1-dist/ol.css">
+    
+    <style>
+        .map {
+            height: 800px;
+            width: 100%;
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- <div id='js-map' class="map"></div> -->
+
+    <div class="grid-containter">
+        <div class="grid-1">
+            <div class="sidebar">
+                <h2>Base Layers</h2>
+                <input type="radio" name="baseLayerRadioButton" value="OSMStandard" checked>OSMStandard<br>
+                <input type="radio" name="baseLayerRadioButton" value="OSMHumanitarian">OSM Humanitarian<br>
+                <input type="radio" name="baseLayerRadioButton" value="StamenTerrain">Stamen Terrain<br>
+            </div>
+        </div>
+
+        <div class="grid-2">
+            <div id='js-map' class="map"></div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="./main.js"></script>
+    <script src="./libs/v6.2.1-dist/ol.js"></script>
+</body>
+</html>
