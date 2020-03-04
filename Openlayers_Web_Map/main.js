@@ -70,4 +70,37 @@ function init() {
             })
         })
     }
+
+    // Vector Layers
+
+    const fillStyle = new ol.style.Fill({
+        color: [84, 118, 255, 1]
+    })
+
+    const strokeStyle = new ol.style.Stroke({
+        color: [46, 45, 45, 1]
+    })
+
+    const circleStyle = new ol.style.Circle({
+        fill: new ol.style.Fill({
+            color: [245, 49, 5, 1]
+        }),
+        radius: 7,
+        stroke: strokeStyle
+    })
+    const EUContriesGeoJSON = new ol.layer.VectorImage({
+        source: new ol.source.Vector({
+            url: './data/vector_data/EUCountries.geojson',
+            format: new ol.format.GeoJSON()
+        }),
+        visible: true,
+        title: 'EUContriesGeoJSON',
+        style: new ol.style.Style({
+            fill: fillStyle,
+            stroke: strokeStyle,
+            image: circleStyle
+        })
+    })
+
+    map.addLayer(EUContriesGeoJSON);
 }
